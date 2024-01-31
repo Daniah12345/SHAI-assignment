@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Assuming your dataset is in a CSV file named 'salaries.csv'
-file_path = 'path_to_your_file/salaries.csv'
+file_path = '"C:\Users\HP\Downloads\Salaries.csv"'
 
 # Read the dataset into a pandas DataFrame
 df = pd.read_csv(file_path)

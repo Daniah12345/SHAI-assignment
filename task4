@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Histogram for Salary Distribution
+plt.figure(figsize=(10, 6))
+sns.histplot(df['TotalPay'], bins=30, kde=True, color='skyblue')
+plt.title('Distribution of Salaries')
+plt.xlabel('Total Pay')
+plt.ylabel('Frequency')
+plt.show()
+
+# Pie Chart for Proportion of Employees in Different Departments
+plt.figure(figsize=(10, 6))
+department_counts = df['JobTitle'].value_counts().head(10)  # Select top 10 job titles for illustration
+plt.pie(department_counts, labels=department_counts.index, autopct='%1.1f%%', startangle=140)
+plt.title('Proportion of Employees in Different Departments')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.show()

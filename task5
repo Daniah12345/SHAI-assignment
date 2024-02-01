@@ -1,0 +1,13 @@
+# Group by 'Year' and 'JobTitle', and calculate mean salary for each group
+grouped_data = df.groupby(['Year', 'JobTitle']).agg({'TotalPay': 'mean'}).reset_index()
+
+# Display the summary statistics for each group
+print(grouped_data.head(10))  # Displaying the first 10 rows for illustration
+
+# Compare average salaries across different groups
+plt.figure(figsize=(12, 6))
+sns.barplot(x='Year', y='TotalPay', hue='JobTitle', data=grouped_data.head(10))
+plt.title('Average Salaries Across Different Groups')
+plt.xlabel('Year')
+plt.ylabel('Average Total Pay')
+plt.show()

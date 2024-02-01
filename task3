@@ -1,0 +1,8 @@
+# Drop rows with missing values in any column
+df_cleaned = df.dropna()
+# Replace missing values in 'TotalPay' with the mean
+df['TotalPay'].fillna(df['TotalPay'].mean(), inplace=True)
+# Replace missing values in 'TotalPay' with a specific value (e.g., 0)
+df['TotalPay'].fillna(0, inplace=True)
+df_numeric = df_numeric.copy()
+df_numeric.fillna(df_numeric.mean(), inplace=True)

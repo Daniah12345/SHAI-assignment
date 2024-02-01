@@ -1,0 +1,22 @@
+
+# Calculate mean, median, mode, minimum, and maximum salary
+mean_salary = df['TotalPay'].mean()
+median_salary = df['TotalPay'].median()
+mode_salary = df['TotalPay'].mode().iloc[0]  # mode() returns a Series, use iloc[0] to get the first mode
+min_salary = df['TotalPay'].min()
+max_salary = df['TotalPay'].max()
+
+# Calculate the range of salaries
+salary_range = max_salary - min_salary
+
+# Calculate the standard deviation of salaries
+std_dev_salary = df['TotalPay'].std()
+
+# Display the results
+print("Mean Salary: {:.2f}".format(mean_salary))
+print("Median Salary: {:.2f}".format(median_salary))
+print("Mode Salary: {:.2f}".format(mode_salary))
+print("Minimum Salary: {:.2f}".format(min_salary))
+print("Maximum Salary: {:.2f}".format(max_salary))
+print("Salary Range: {:.2f}".format(salary_range))
+print("Standard Deviation of Salary: {:.2f}".format(std_dev_salary))

@@ -1,13 +1,13 @@
-# Calculate correlation between 'TotalPay' and 'Benefits'
-correlation = df['TotalPay'].corr(df['Benefits'])
+# Group by 'Year' and 'JobTitle', and calculate mean salary for each group
+grouped_data = df.groupby(['Year', 'JobTitle']).agg({'TotalPay': 'mean'}).reset_index()
 
-# Display the correlation coefficient
-print("Correlation between TotalPay and Benefits:", correlation)
+# Display the summary statistics for each group
+print(grouped_data.head(10))  # Displaying the first 10 rows for illustration
 
-# Scatter plot to visualize the relationship
-plt.figure(figsize=(10, 6))
-sns.scatterplot(x='TotalPay', y='Benefits', data=df, alpha=0.5)
-plt.title('Scatter Plot: TotalPay vs Benefits')
-plt.xlabel('Total Pay')
-plt.ylabel('Benefits')
+# Compare average salaries across different groups
+plt.figure(figsize=(12, 6))
+sns.barplot(x='Year', y='TotalPay', hue='JobTitle', data=grouped_data.head(10))
+plt.title('Average Salaries Across Different Groups')
+plt.xlabel('Year')
+plt.ylabel('Average Total Pay')
 plt.show()

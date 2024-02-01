@@ -1,0 +1,13 @@
+# Calculate correlation between 'TotalPay' and 'Benefits'
+correlation = df['TotalPay'].corr(df['Benefits'])
+
+# Display the correlation coefficient
+print("Correlation between TotalPay and Benefits:", correlation)
+
+# Scatter plot to visualize the relationship
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='TotalPay', y='Benefits', data=df, alpha=0.5)
+plt.title('Scatter Plot: TotalPay vs Benefits')
+plt.xlabel('Total Pay')
+plt.ylabel('Benefits')
+plt.show()
